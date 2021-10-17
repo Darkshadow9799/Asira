@@ -1,0 +1,42 @@
+{
+  "name": "Com",
+  "fields": [
+    {
+      "fieldName": "cCreatedById",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "cCreatedByName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cDesc",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cCreatedDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "cModifiedDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "smId",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "com",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20211012161905"
+}

@@ -1,0 +1,109 @@
+
+entity Org {
+    orgName String required,
+    orgEmailId String,
+    orgPhoneNum Long,
+    createdDate Instant,
+    modifiedDate Instant,
+    orgProjNum Long,
+    orgMembersNum Long
+}
+
+entity Spe {
+    speFirstName String,
+    speLastName String,
+    speEmailId String required,
+    spePhoneNumber Long,
+    speOrgId Long,
+    speOrgVerified Boolean,
+    createdDate Instant,
+    modifiedDate Instant
+}
+
+entity Project {
+	projName String required,
+	projCreatedDate Instant,
+	projModifiedDate Instant,
+    projAdminId Long,
+    orgId Long,
+    projMemberNumber Long
+}
+
+entity SpeProj {
+	projId Long required,
+    speId Long,
+    orgId Long
+}
+
+entity Modules {
+	mName String,
+    mDesc String,
+    mSpeId Long required,
+    mProjId Long required,
+    mCreatedDate Instant,
+    mModifiedDate Instant,
+    mSmNum Long,
+    mDueDate Instant,
+    mFinishedDate Instant,
+    mCompleted Boolean
+}
+
+entity SubModules {
+	smName String,
+	smDesc String,
+	smMId Long required,
+	smSpeId Long required,
+	smCreatedDate Instant,
+    smModifiedDate Instant,
+    smDueDate Instant,
+    smFinishedDate Instant,
+    smCompleted Boolean,
+    smTagID Long,
+    speIdSmTagId Long,
+    smLoggedTime Long
+}
+
+entity SpeProjMSm {
+	speId Long,
+	projId Long required,
+	mId Long required,
+    smId Long required
+}
+
+entity Tag {
+	tagTitle String,
+	tagDesc String,
+    tagCreatedById Long,
+    tagCreatedByName String,
+    tagCreatedDate Instant,
+    tagModifiedDate Instant,
+    projId Long required
+}
+
+entity Com{
+    cCreatedById Long required,
+    cCreatedByName String,
+    cDesc String,
+    cCreatedDate Instant,
+    cModifiedDate Instant,
+    smId Long required
+}
+
+entity Request{
+	rFrom Long,
+    rTo Long,
+    rPendingState Boolean,
+    rAccepted Boolean,
+    rRejected Boolean,
+    speNotified Boolean,
+    orgNotified Boolean,
+    createdDate Instant,
+    modifiedDate Instant
+}
+
+paginate Project, Modules with pagination
+paginate SubModules with pagination
+paginate Com with pagination
+
+service all with serviceImpl
+

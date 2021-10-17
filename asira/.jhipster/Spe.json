@@ -1,0 +1,49 @@
+{
+  "name": "Spe",
+  "fields": [
+    {
+      "fieldName": "speFirstName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "speLastName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "speEmailId",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "spePhoneNumber",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "speOrgId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "speOrgVerified",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createdDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "modifiedDate",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "spe",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20211012161858"
+}

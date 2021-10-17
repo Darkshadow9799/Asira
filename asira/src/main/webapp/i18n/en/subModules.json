@@ -1,0 +1,35 @@
+{
+  "asiraApp": {
+    "subModules": {
+      "home": {
+        "title": "Sub Modules",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Sub Modules",
+        "createOrEditLabel": "Create or edit a Sub Modules",
+        "notFound": "No Sub Modules found"
+      },
+      "created": "A new Sub Modules is created with identifier {{ param }}",
+      "updated": "A Sub Modules is updated with identifier {{ param }}",
+      "deleted": "A Sub Modules is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Sub Modules {{ id }}?"
+      },
+      "detail": {
+        "title": "Sub Modules"
+      },
+      "id": "ID",
+      "smName": "Sm Name",
+      "smDesc": "Sm Desc",
+      "smMId": "Sm M Id",
+      "smSpeId": "Sm Spe Id",
+      "smCreatedDate": "Sm Created Date",
+      "smModifiedDate": "Sm Modified Date",
+      "smDueDate": "Sm Due Date",
+      "smFinishedDate": "Sm Finished Date",
+      "smCompleted": "Sm Completed",
+      "smTagID": "Sm Tag ID",
+      "speIdSmTagId": "Spe Id Sm Tag Id",
+      "smLoggedTime": "Sm Logged Time"
+    }
+  }
+}

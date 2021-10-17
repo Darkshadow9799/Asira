@@ -1,0 +1,29 @@
+{
+  "asiraApp": {
+    "com": {
+      "home": {
+        "title": "Coms",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Com",
+        "createOrEditLabel": "Create or edit a Com",
+        "notFound": "No Coms found"
+      },
+      "created": "A new Com is created with identifier {{ param }}",
+      "updated": "A Com is updated with identifier {{ param }}",
+      "deleted": "A Com is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Com {{ id }}?"
+      },
+      "detail": {
+        "title": "Com"
+      },
+      "id": "ID",
+      "cCreatedById": "C Created By Id",
+      "cCreatedByName": "C Created By Name",
+      "cDesc": "C Desc",
+      "cCreatedDate": "C Created Date",
+      "cModifiedDate": "C Modified Date",
+      "smId": "Sm Id"
+    }
+  }
+}

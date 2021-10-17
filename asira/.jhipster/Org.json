@@ -1,0 +1,45 @@
+{
+  "name": "Org",
+  "fields": [
+    {
+      "fieldName": "orgName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "orgEmailId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "orgPhoneNum",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "createdDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "modifiedDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "orgProjNum",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "orgMembersNum",
+      "fieldType": "Long"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "org",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20211012161857"
+}

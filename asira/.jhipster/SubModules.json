@@ -1,0 +1,66 @@
+{
+  "name": "SubModules",
+  "fields": [
+    {
+      "fieldName": "smName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "smDesc",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "smMId",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "smSpeId",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "smCreatedDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "smModifiedDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "smDueDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "smFinishedDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "smCompleted",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "smTagID",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "speIdSmTagId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "smLoggedTime",
+      "fieldType": "Long"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "sub_modules",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20211012161902"
+}

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity SubModules.
+    -->
+    <changeSet id="20211012161902-1" author="jhipster">
+        <createTable tableName="sub_modules">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="sm_name" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="sm_desc" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="sm_m_id" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <column name="sm_spe_id" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <column name="sm_created_date" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="sm_modified_date" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="sm_due_date" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="sm_finished_date" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="sm_completed" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="sm_tag_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="spe_id_sm_tag_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="sm_logged_time" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="sub_modules" columnName="sm_created_date" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="sub_modules" columnName="sm_modified_date" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="sub_modules" columnName="sm_due_date" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="sub_modules" columnName="sm_finished_date" columnDataType="${datetimeType}"/>
+        <addForeignKeyConstraint baseTableName="sub_modules" baseColumnNames="sm_m_id" constraintName="sub_modules_sm_m_id_fk"
+                                 referencedTableName="modules"  referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="sub_modules" baseColumnNames="sm_spe_id" constraintName="sub_modules_sm_spe_id_fk"
+                                 referencedTableName="spe"  referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="sub_modules" baseColumnNames="sm_tag_id" constraintName="sub_modules_sm_tag_id_fk"
+                                 referencedTableName="tag"  referencedColumnNames="id"/>
+        <addForeignKeyConstraint baseTableName="sub_modules" baseColumnNames="spe_id_sm_tag_id" constraintName="sub_modules_spe_id_sm_tag_id_fk"
+                                 referencedTableName="spe"  referencedColumnNames="id"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+</databaseChangeLog>

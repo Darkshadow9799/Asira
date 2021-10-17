@@ -1,0 +1,27 @@
+{
+  "asiraApp": {
+    "speProjMSm": {
+      "home": {
+        "title": "Spe Proj M Sms",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Spe Proj M Sm",
+        "createOrEditLabel": "Create or edit a Spe Proj M Sm",
+        "notFound": "No Spe Proj M Sms found"
+      },
+      "created": "A new Spe Proj M Sm is created with identifier {{ param }}",
+      "updated": "A Spe Proj M Sm is updated with identifier {{ param }}",
+      "deleted": "A Spe Proj M Sm is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Spe Proj M Sm {{ id }}?"
+      },
+      "detail": {
+        "title": "Spe Proj M Sm"
+      },
+      "id": "ID",
+      "speId": "Spe Id",
+      "projId": "Proj Id",
+      "mId": "M Id",
+      "smId": "Sm Id"
+    }
+  }
+}

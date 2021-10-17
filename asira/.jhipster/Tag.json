@@ -1,0 +1,45 @@
+{
+  "name": "Tag",
+  "fields": [
+    {
+      "fieldName": "tagTitle",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tagDesc",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tagCreatedById",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "tagCreatedByName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "tagCreatedDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "tagModifiedDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "projId",
+      "fieldType": "Long",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "tag",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20211012161904"
+}
