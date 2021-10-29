@@ -1,12 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
-import SignUp from './signUp/signUp';
+import SignIn from './signIn/signIn';
 
 function App() {
   return (
     <React.Fragment>
-      <SignUp></SignUp>
+      <header></header>
+      <SignIn ></SignIn>
+      <footer></footer>
     </React.Fragment>
   );
 }
