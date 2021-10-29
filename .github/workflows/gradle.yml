@@ -16,4 +16,4 @@ jobs:
     - name: Change wrapper permissions
       run: chmod +x ./asira/gradlew
     - name: Build with Gradle
-      run: ./asira/gradlew build
+      run: ./asira/gradlew clean build -x test
