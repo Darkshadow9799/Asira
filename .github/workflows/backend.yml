@@ -31,7 +31,9 @@ jobs:
         java-version: '8'
         distribution: 'adopt'
         cache: gradle
+    - name: Move to asira
+      run: cd ./asira
     - name: Grant execute permission for gradlew
-      run: chmod +x ./asira/gradlew
+      run: chmod +x gradlew
     - name: Build with Gradle
-      run: ./asira/gradlew build
+      run: ./gradlew build
