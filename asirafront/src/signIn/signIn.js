@@ -5,31 +5,37 @@ import { AiOutlineLock } from 'react-icons/ai';
 import axios from "axios";
 
 const SignIn = () => {
-      const [name, setName] = useState();
-      const [password, setPassword] = useState();
-      const endpoint = "http://localhost:8080/api/authenticate";
+    const [name, setName] = useState();
+    const [password, setPassword] = useState();
+    const endpoint = "http://localhost:8080/api/authenticate";
     
-      const handleChangeName= (event) => {
-        setName(event.target.value);
-      }
+    const handleChangeName= (event) => {
+      setName(event.target.value);
+    }
 
-      const handleChangePassword= (event) => {
-        setPassword(event.target.value);
-      }
+    const handleChangePassword= (event) => {
+      setPassword(event.target.value);
+    }
     
-      const handleSubmit = (event) => {
-        console.log(password);
-        var data = {
-          "username": name,
-          "password": password,
-          "rememberMe":false
-        }
-        axios.post(endpoint, data).then(res => {
-          // console.log(res);
-          localStorage.setItem("authorization", res.data.id_token);
-        });
-        event.preventDefault();
+    const handleSubmit = (event) => {
+      var data = {
+        "username": name,
+        "password": password,
+        "rememberMe":false
       }
+      axios.post(endpoint, data).then(res => {
+        localStorage.setItem("authorization", res.data.id_token);
+
+        getProject();
+      });
+      event.preventDefault();
+    }
+
+    const getProject = () => {
+      axios.get("http://localhost:8080/api/projects").then(res => {
+        console.log(res);
+      });
+    }
     
     return (
         <>
