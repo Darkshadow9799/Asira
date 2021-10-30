@@ -89,5 +89,5 @@ jobs:
     - name: Upload war
       uses: actions/upload-artifact@v2
       with:
-        name: appbundle
+        name: asiraBackend
         path: asira/build/libs/asira-0.0.1-SNAPSHOT.war
