@@ -1,7 +1,7 @@
 # This workflow will build a Java project with Gradle and cache/restore any dependencies to improve the workflow execution time
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-gradle
 
-name: Java CI with Gradle
+name: Create Asira Production Build
 
 on:
   push:
@@ -21,8 +21,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2
+    - name: Start up
+      uses: actions/checkout@v2
+    - name: Node set up
+      uses: actions/setup-node@v2
       with:
         node-version: '16'
     - name: Set up JDK 1.8
@@ -33,8 +35,8 @@ jobs:
         cache: gradle
     - name: Grant execute permission for gradlew
       run: chmod +x ./asira/gradlew
-    - name: Build with Gradle
+    - name: Build war file with Gradle
       run: |
         cd ./asira
         git init
-        ./gradlew clean build -x test
+        ./gradlew -Pprod -Pwar clean bootWar -x test
