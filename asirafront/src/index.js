@@ -3,6 +3,23 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import axios from "axios";
+
+var jwtToken;
+
+axios.interceptors.request.use(
+  function(config) {
+    jwtToken = localStorage.getItem("authorization");
+    if (jwtToken) {
+      config.headers["Authorization"] = "Bearer " + jwtToken;
+    }
+    return config;
+  },
+  function(err) {
+    return Promise.reject(err);
+  }
+);
+
 
 ReactDOM.render(
   <React.StrictMode>

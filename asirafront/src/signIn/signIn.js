@@ -7,7 +7,8 @@ import axios from "axios";
 const SignIn = () => {
     const [name, setName] = useState();
     const [password, setPassword] = useState();
-    const endpoint = "http://localhost:8080/api/authenticate";
+    const endpointAuthenticate = "http://localhost:8080/api/authenticate";
+    const endpointProjects = "http://localhost:8080/api/projects";
     
     const handleChangeName= (event) => {
       setName(event.target.value);
@@ -23,7 +24,7 @@ const SignIn = () => {
         "password": password,
         "rememberMe":false
       }
-      axios.post(endpoint, data).then(res => {
+      axios.post(endpointAuthenticate, data).then(res => {
         localStorage.setItem("authorization", res.data.id_token);
 
         getProject();
@@ -32,7 +33,7 @@ const SignIn = () => {
     }
 
     const getProject = () => {
-      axios.get("http://localhost:8080/api/projects").then(res => {
+      axios.get(endpointProjects).then(res => {
         console.log(res);
       });
     }
