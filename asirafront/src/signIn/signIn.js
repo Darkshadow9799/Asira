@@ -47,6 +47,7 @@ const SignIn = () => {
                 <div className="mb-3"><input type="text" className="form-control" placeholder="email" value={name || ''} onChange={handleChangeName} /></div>
                 <div className="mb-3"><input type="password" className="form-control" placeholder="Password" value={password || ''} onChange={handleChangePassword}/></div>
                 <div className="mb-3"><button  className="btn btn-primary d-block w-100" type="submit">Log In</button></div>
+                <a className="forgot" href="/register">Forgot your email or password?</a>
             </form>
         </section>
     </> 
