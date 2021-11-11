@@ -3,8 +3,10 @@ import './signIn.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { AiOutlineLock } from 'react-icons/ai';
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 const SignIn = () => {
+    let history = useHistory();
     const [name, setName] = useState();
     const [password, setPassword] = useState();
     const endpointAuthenticate = "http://localhost:8080/api/authenticate";
@@ -26,7 +28,6 @@ const SignIn = () => {
       }
       axios.post(endpointAuthenticate, data).then(res => {
         localStorage.setItem("authorization", res.data.id_token);
-
         getProject();
       });
       event.preventDefault();
@@ -35,6 +36,7 @@ const SignIn = () => {
     const getProject = () => {
       axios.get(endpointProjects).then(res => {
         console.log(res);
+        history.push('/projects');
       });
     }
     
