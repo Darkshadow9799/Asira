@@ -32,11 +32,12 @@ const Header = (props: IHeaderProps) => {
 
   const renderDevRibbon = () =>
     props.isInProduction === false ? (
-      <div className="ribbon dev">
-        <a href="">
-          <Translate contentKey={`global.ribbon.${props.ribbonEnv}`} />
-        </a>
-      </div>
+      // <div className="ribbon dev">
+      //   <a href="">
+      //     <Translate contentKey={`global.ribbon.${props.ribbonEnv}`} />
+      //   </a>
+      // </div>
+      null
     ) : null;
 
   const toggleMenu = () => setMenuOpen(!menuOpen);

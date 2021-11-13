@@ -10,7 +10,6 @@ const SignIn = () => {
     const [name, setName] = useState();
     const [password, setPassword] = useState();
     const endpointAuthenticate = "http://localhost:8080/api/authenticate";
-    const endpointProjects = "http://localhost:8080/api/projects";
     
     const handleChangeName= (event) => {
       setName(event.target.value);
@@ -34,10 +33,13 @@ const SignIn = () => {
     }
 
     const getProject = () => {
-      axios.get(endpointProjects).then(res => {
-        console.log(res);
-        history.push('/projects');
-      });
+      // axios.get(endpointProjects).then(res => {
+      //   console.log(res);
+        history.push({
+          pathname: '/projects',
+        });
+      //   <ProjectList {...res.data}></ProjectList>
+      // });
     }
     
     return (
