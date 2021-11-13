@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
-// CSS
 import './projects.css';
 import Projects from './projects'
 import axios from 'axios';
+import { urls } from '../constants';
 
 const ProjectList = () => {
-    const endpointProjects = "http://localhost:8080/api/projects";
     var [data, setData] = useState([]);
+    const endpointProjects = urls.urlPrefix + urls.projectList;
     // Data for testing Projects component without database or backend running
     // data = [{"projName":"Asira","orgId":"1","projAdminId":"1"},{"projName":"Asira","orgId":"1","projAdminId":"1"},{"projName":"Asira","orgId":"1","projAdminId":"1"},{"projName":"Asira","orgId":"1","projAdminId":"1"}]
     useEffect(()=>{

@@ -4,12 +4,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { AiOutlineLock } from 'react-icons/ai';
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import { urls } from '../constants';
 
 const SignIn = () => {
     let history = useHistory();
     const [name, setName] = useState();
     const [password, setPassword] = useState();
-    const endpointAuthenticate = "http://localhost:8080/api/authenticate";
+    const endpointAuthenticate = urls.urlPrefix + urls.authentication;
     
     const handleChangeName= (event) => {
       setName(event.target.value);
