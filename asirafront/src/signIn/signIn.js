@@ -27,8 +27,14 @@ const SignIn = () => {
         "rememberMe":false
       }
       axios.post(endpointAuthenticate, data).then(res => {
-        localStorage.setItem("authorization", res.data.id_token);
-        getProject();
+        console.log(res);
+        if(res.status === 200){
+          localStorage.setItem("authorization", res.data.id_token);
+          getProject();
+        } else {
+          console.log(res.statusText);
+          history.push("/");
+        }
       });
       event.preventDefault();
     }

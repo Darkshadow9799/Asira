@@ -4,6 +4,7 @@ import SignIn from './signIn/signIn';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Register from './register/register';
 import ProjectList from './projects/projectList';
+import Error from './error';
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
           </Route>
           <Route exact path ="/projects">
             <ProjectList />
+          </Route>
+          <Route exact path ="/error">
+            <Error />
           </Route>
         </Switch>
       </BrowserRouter>
