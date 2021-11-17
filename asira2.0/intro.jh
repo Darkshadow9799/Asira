@@ -1,0 +1,102 @@
+
+entity Org {
+    orgName String required,
+    orgEmailId String,
+    orgPhoneNum Long,
+    createdDate Instant,
+    modifiedDate Instant,
+    orgProjNum Long,
+    orgMembersNum Long
+}
+
+entity Spe {
+    speFirstName String,
+    speLastName String,
+    speEmailId String required,
+    spePhoneNumber Long,
+    speOrgVerified Boolean,
+    createdDate Instant,
+    modifiedDate Instant
+}
+
+entity Project {
+	projName String required,
+	projCreatedDate Instant,
+	projModifiedDate Instant,
+    projMemberNumber Long
+}
+
+entity Modules {
+	mName String,
+    mDesc String,
+    mCreatedDate Instant,
+    mModifiedDate Instant,
+    mSmNum Long,
+    mDueDate Instant,
+    mFinishedDate Instant,
+    mCompleted Boolean
+}
+
+entity Tag {
+	tagTitle String,
+	tagDesc String,
+    tagCreatedById Long,
+    tagCreatedByName String,
+    tagCreatedDate Instant,
+    tagModifiedDate Instant,
+}
+
+entity SubModules {
+	smName String,
+	smDesc String,
+	smCreatedDate Instant,
+    smModifiedDate Instant,
+    smDueDate Instant,
+    smFinishedDate Instant,
+    smCompleted Boolean,
+    speNameSmTagId String,
+    smLoggedTime Long
+}
+
+entity Com{
+    cCreatedById Long required,
+    cCreatedByName String,
+    cDesc String,
+    cCreatedDate Instant,
+    cModifiedDate Instant
+}
+
+entity Request{
+	rFrom Long,
+    rTo Long,
+    rPendingState Boolean,
+    rAccepted Boolean,
+    rRejected Boolean,
+    speNotified Boolean,
+    orgNotified Boolean,
+    createdDate Instant,
+    modifiedDate Instant
+}
+
+relationship ManyToOne {
+	Spe{org} to Org,
+    Project{org} to Org,
+    Project{spe} to Spe,
+    Modules{spe} to Spe,
+    Modules{project} to Project,
+    SubModules{spe} to Spe,
+    SubModules{module} to Modules,
+}
+
+relationship OneToOne{
+    Tag{project} to Project,
+    SubModules{tag} to Tag,
+    Com{subModules} to SubModules
+}
+
+paginate Project, Modules with pagination
+paginate SubModules with pagination
+paginate Com with pagination
+
+service all with serviceImpl
+

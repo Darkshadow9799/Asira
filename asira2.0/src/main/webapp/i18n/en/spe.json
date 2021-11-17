@@ -1,0 +1,31 @@
+{
+  "asiraApp": {
+    "spe": {
+      "home": {
+        "title": "Spes",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Spe",
+        "createOrEditLabel": "Create or edit a Spe",
+        "notFound": "No Spes found"
+      },
+      "created": "A new Spe is created with identifier {{ param }}",
+      "updated": "A Spe is updated with identifier {{ param }}",
+      "deleted": "A Spe is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Spe {{ id }}?"
+      },
+      "detail": {
+        "title": "Spe"
+      },
+      "id": "ID",
+      "speFirstName": "Spe First Name",
+      "speLastName": "Spe Last Name",
+      "speEmailId": "Spe Email Id",
+      "spePhoneNumber": "Spe Phone Number",
+      "speOrgVerified": "Spe Org Verified",
+      "createdDate": "Created Date",
+      "modifiedDate": "Modified Date",
+      "org": "Org"
+    }
+  }
+}

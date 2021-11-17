@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity Request.
+    -->
+    <changeSet id="20211116154535-1" author="jhipster">
+        <createTable tableName="request">
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="r_from" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="r_to" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <column name="r_pending_state" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="r_accepted" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="r_rejected" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="spe_notified" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="org_notified" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="created_date" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <column name="modified_date" type="${datetimeType}">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+        <dropDefaultValue tableName="request" columnName="created_date" columnDataType="${datetimeType}"/>
+        <dropDefaultValue tableName="request" columnName="modified_date" columnDataType="${datetimeType}"/>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20211116154535-1-data" author="jhipster" context="faker">
+        <loadData
+                  file="config/liquibase/fake-data/request.csv"
+                  separator=";"
+                  tableName="request"
+                  usePreparedStatements="true">
+            <column name="id" type="numeric"/>
+            <column name="r_from" type="numeric"/>
+            <column name="r_to" type="numeric"/>
+            <column name="r_pending_state" type="boolean"/>
+            <column name="r_accepted" type="boolean"/>
+            <column name="r_rejected" type="boolean"/>
+            <column name="spe_notified" type="boolean"/>
+            <column name="org_notified" type="boolean"/>
+            <column name="created_date" type="date"/>
+            <column name="modified_date" type="date"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here -->
+        </loadData>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,61 @@
+{
+  "name": "Modules",
+  "fields": [
+    {
+      "fieldName": "mName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "mDesc",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "mCreatedDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "mModifiedDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "mSmNum",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "mDueDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "mFinishedDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "mCompleted",
+      "fieldType": "Boolean"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "spe",
+      "otherEntityRelationshipName": "modules",
+      "relationshipName": "spe"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "project",
+      "otherEntityRelationshipName": "modules",
+      "relationshipName": "project"
+    }
+  ],
+  "entityTableName": "modules",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20211116154531"
+}

@@ -1,0 +1,52 @@
+{
+  "name": "Request",
+  "fields": [
+    {
+      "fieldName": "rFrom",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "rTo",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "rPendingState",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "rAccepted",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "rRejected",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "speNotified",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "orgNotified",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "createdDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "modifiedDate",
+      "fieldType": "Instant"
+    }
+  ],
+  "relationships": [],
+  "entityTableName": "request",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20211116154535"
+}

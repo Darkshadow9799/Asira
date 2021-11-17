@@ -1,0 +1,11 @@
+id;r_from;r_to;r_pending_state;r_accepted;r_rejected;spe_notified;org_notified;created_date;modified_date
+1;19336;6935;false;true;false;true;false;2021-11-16T15:22:22;2021-11-16T10:09:51
+2;36308;38718;true;false;true;false;true;2021-11-15T19:47:55;2021-11-15T23:54:51
+3;91812;41338;false;false;false;false;false;2021-11-16T01:06:41;2021-11-16T05:35:08
+4;79032;91690;false;false;false;false;false;2021-11-16T12:19:25;2021-11-16T07:47:26
+5;93242;33721;true;false;false;false;false;2021-11-15T19:54:15;2021-11-16T15:29:36
+6;35876;58667;false;true;false;true;false;2021-11-15T17:39:42;2021-11-15T17:59:53
+7;63540;47462;true;true;true;false;false;2021-11-16T15:28:23;2021-11-16T01:00:38
+8;6722;93805;false;true;true;true;true;2021-11-15T22:46:06;2021-11-15T17:35:30
+9;84134;60383;false;false;false;true;false;2021-11-16T06:58:32;2021-11-16T02:12:00
+10;31179;40363;false;true;false;true;false;2021-11-15T18:48:27;2021-11-16T13:40:08

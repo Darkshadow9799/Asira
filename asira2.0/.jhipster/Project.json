@@ -1,0 +1,46 @@
+{
+  "name": "Project",
+  "fields": [
+    {
+      "fieldName": "projName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "projCreatedDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "projModifiedDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "projMemberNumber",
+      "fieldType": "Long"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "org",
+      "otherEntityRelationshipName": "project",
+      "relationshipName": "org"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "spe",
+      "otherEntityRelationshipName": "project",
+      "relationshipName": "spe"
+    }
+  ],
+  "entityTableName": "project",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20211116154530"
+}

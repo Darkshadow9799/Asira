@@ -1,0 +1,72 @@
+{
+  "name": "SubModules",
+  "fields": [
+    {
+      "fieldName": "smName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "smDesc",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "smCreatedDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "smModifiedDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "smDueDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "smFinishedDate",
+      "fieldType": "Instant"
+    },
+    {
+      "fieldName": "smCompleted",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "speNameSmTagId",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "smLoggedTime",
+      "fieldType": "Long"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "tag",
+      "otherEntityRelationshipName": "subModules",
+      "relationshipName": "tag",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "spe",
+      "otherEntityRelationshipName": "subModules",
+      "relationshipName": "spe"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "modules",
+      "otherEntityRelationshipName": "subModules",
+      "relationshipName": "module"
+    }
+  ],
+  "entityTableName": "sub_modules",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20211116154533"
+}
