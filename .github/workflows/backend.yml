@@ -74,7 +74,7 @@ jobs:
       with:
         path: version1.txt
     - name: Grant execute permission for gradlew
-      run: chmod +x ./asira/gradlew
+      run: chmod +x ./asira2.0/gradlew
     - name: Build war file with Gradle
       run: |
         cd ./asira2.0
