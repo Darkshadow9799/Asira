@@ -18,6 +18,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tech.jhipster.web.util.HeaderUtil;
 import tech.jhipster.web.util.ResponseUtil;
+import java.time.Instant;
 
 /**
  * REST controller for managing {@link com.dshaw.asira.domain.Spe}.
@@ -55,6 +56,8 @@ public class SpeResource {
         if (spe.getId() != null) {
             throw new BadRequestAlertException("A new spe cannot already have an ID", ENTITY_NAME, "idexists");
         }
+        spe.setCreatedDate(Instant.now());
+        spe.setModifiedDate(Instant.now());
         Spe result = speService.save(spe);
         return ResponseEntity
             .created(new URI("/api/spes/" + result.getId()))
@@ -87,6 +90,7 @@ public class SpeResource {
             throw new BadRequestAlertException("Entity not found", ENTITY_NAME, "idnotfound");
         }
 
+        spe.setModifiedDate(Instant.now());
         Spe result = speService.save(spe);
         return ResponseEntity
             .ok()

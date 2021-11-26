@@ -137,7 +137,7 @@ export const Com = (props: RouteComponentProps<{ url: string }>) => {
                   <td>{com.cDesc}</td>
                   <td>{com.cCreatedDate ? <TextFormat type="date" value={com.cCreatedDate} format={APP_DATE_FORMAT} /> : null}</td>
                   <td>{com.cModifiedDate ? <TextFormat type="date" value={com.cModifiedDate} format={APP_DATE_FORMAT} /> : null}</td>
-                  <td>{com.subModules ? <Link to={`sub-modules/${com.subModules.id}`}>{com.subModules.id}</Link> : ''}</td>
+                  <td>{com.subModules ? <Link to={`sub-modules/${com.subModules.id}`}>{com.subModules.smName}</Link> : ''}</td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${com.id}`} color="info" size="sm" data-cy="entityDetailsButton">

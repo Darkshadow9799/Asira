@@ -16,6 +16,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tech.jhipster.web.util.HeaderUtil;
 import tech.jhipster.web.util.ResponseUtil;
+import java.time.Instant;
 
 /**
  * REST controller for managing {@link com.dshaw.asira.domain.Request}.
@@ -53,6 +54,8 @@ public class RequestResource {
         if (request.getId() != null) {
             throw new BadRequestAlertException("A new request cannot already have an ID", ENTITY_NAME, "idexists");
         }
+        request.setCreatedDate(Instant.now());
+        request.setModifiedDate(Instant.now());
         Request result = requestService.save(request);
         return ResponseEntity
             .created(new URI("/api/requests/" + result.getId()))
@@ -85,6 +88,7 @@ public class RequestResource {
             throw new BadRequestAlertException("Entity not found", ENTITY_NAME, "idnotfound");
         }
 
+        request.setModifiedDate(Instant.now());
         Request result = requestService.save(request);
         return ResponseEntity
             .ok()

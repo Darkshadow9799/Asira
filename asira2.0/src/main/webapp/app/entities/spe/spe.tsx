@@ -91,7 +91,7 @@ export const Spe = (props: RouteComponentProps<{ url: string }>) => {
                   <td>{spe.speOrgVerified ? 'true' : 'false'}</td>
                   <td>{spe.createdDate ? <TextFormat type="date" value={spe.createdDate} format={APP_DATE_FORMAT} /> : null}</td>
                   <td>{spe.modifiedDate ? <TextFormat type="date" value={spe.modifiedDate} format={APP_DATE_FORMAT} /> : null}</td>
-                  <td>{spe.org ? <Link to={`org/${spe.org.id}`}>{spe.org.id}</Link> : ''}</td>
+                  <td>{spe.org ? <Link to={`org/${spe.org.id}`}>{spe.org.orgName}</Link> : ''}</td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${spe.id}`} color="info" size="sm" data-cy="entityDetailsButton">

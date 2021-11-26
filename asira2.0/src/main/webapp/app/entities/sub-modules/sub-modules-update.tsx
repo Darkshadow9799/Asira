@@ -131,22 +131,6 @@ export const SubModulesUpdate = (props: RouteComponentProps<{ id: string }>) => 
                 type="text"
               />
               <ValidatedField
-                label={translate('asiraApp.subModules.smCreatedDate')}
-                id="sub-modules-smCreatedDate"
-                name="smCreatedDate"
-                data-cy="smCreatedDate"
-                type="datetime-local"
-                placeholder="YYYY-MM-DD HH:mm"
-              />
-              <ValidatedField
-                label={translate('asiraApp.subModules.smModifiedDate')}
-                id="sub-modules-smModifiedDate"
-                name="smModifiedDate"
-                data-cy="smModifiedDate"
-                type="datetime-local"
-                placeholder="YYYY-MM-DD HH:mm"
-              />
-              <ValidatedField
                 label={translate('asiraApp.subModules.smDueDate')}
                 id="sub-modules-smDueDate"
                 name="smDueDate"
@@ -189,7 +173,7 @@ export const SubModulesUpdate = (props: RouteComponentProps<{ id: string }>) => 
                 {tags
                   ? tags.map(otherEntity => (
                       <option value={otherEntity.id} key={otherEntity.id}>
-                        {otherEntity.id}
+                        {otherEntity.tagTitle}
                       </option>
                     ))
                   : null}
@@ -199,7 +183,7 @@ export const SubModulesUpdate = (props: RouteComponentProps<{ id: string }>) => 
                 {spes
                   ? spes.map(otherEntity => (
                       <option value={otherEntity.id} key={otherEntity.id}>
-                        {otherEntity.id}
+                        {otherEntity.speFirstName}
                       </option>
                     ))
                   : null}
@@ -215,7 +199,7 @@ export const SubModulesUpdate = (props: RouteComponentProps<{ id: string }>) => 
                 {modules
                   ? modules.map(otherEntity => (
                       <option value={otherEntity.id} key={otherEntity.id}>
-                        {otherEntity.id}
+                        {otherEntity.mName}
                       </option>
                     ))
                   : null}

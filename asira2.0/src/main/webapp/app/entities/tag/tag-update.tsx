@@ -114,28 +114,12 @@ export const TagUpdate = (props: RouteComponentProps<{ id: string }>) => {
                 data-cy="tagCreatedByName"
                 type="text"
               />
-              <ValidatedField
-                label={translate('asiraApp.tag.tagCreatedDate')}
-                id="tag-tagCreatedDate"
-                name="tagCreatedDate"
-                data-cy="tagCreatedDate"
-                type="datetime-local"
-                placeholder="YYYY-MM-DD HH:mm"
-              />
-              <ValidatedField
-                label={translate('asiraApp.tag.tagModifiedDate')}
-                id="tag-tagModifiedDate"
-                name="tagModifiedDate"
-                data-cy="tagModifiedDate"
-                type="datetime-local"
-                placeholder="YYYY-MM-DD HH:mm"
-              />
               <ValidatedField id="tag-project" name="projectId" data-cy="project" label={translate('asiraApp.tag.project')} type="select">
                 <option value="" key="0" />
                 {projects
                   ? projects.map(otherEntity => (
                       <option value={otherEntity.id} key={otherEntity.id}>
-                        {otherEntity.id}
+                        {otherEntity.projName}
                       </option>
                     ))
                   : null}

@@ -24,6 +24,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import tech.jhipster.web.util.HeaderUtil;
 import tech.jhipster.web.util.PaginationUtil;
 import tech.jhipster.web.util.ResponseUtil;
+import java.time.Instant;
 
 /**
  * REST controller for managing {@link com.dshaw.asira.domain.Project}.
@@ -61,6 +62,8 @@ public class ProjectResource {
         if (project.getId() != null) {
             throw new BadRequestAlertException("A new project cannot already have an ID", ENTITY_NAME, "idexists");
         }
+        project.setProjCreatedDate(Instant.now());
+        project.setProjModifiedDate(Instant.now());
         Project result = projectService.save(project);
         return ResponseEntity
             .created(new URI("/api/projects/" + result.getId()))
@@ -95,6 +98,7 @@ public class ProjectResource {
             throw new BadRequestAlertException("Entity not found", ENTITY_NAME, "idnotfound");
         }
 
+        project.setProjModifiedDate(Instant.now());
         Project result = projectService.save(project);
         return ResponseEntity
             .ok()

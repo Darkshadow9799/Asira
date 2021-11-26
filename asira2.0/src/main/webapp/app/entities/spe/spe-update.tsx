@@ -137,28 +137,12 @@ export const SpeUpdate = (props: RouteComponentProps<{ id: string }>) => {
                 check
                 type="checkbox"
               />
-              <ValidatedField
-                label={translate('asiraApp.spe.createdDate')}
-                id="spe-createdDate"
-                name="createdDate"
-                data-cy="createdDate"
-                type="datetime-local"
-                placeholder="YYYY-MM-DD HH:mm"
-              />
-              <ValidatedField
-                label={translate('asiraApp.spe.modifiedDate')}
-                id="spe-modifiedDate"
-                name="modifiedDate"
-                data-cy="modifiedDate"
-                type="datetime-local"
-                placeholder="YYYY-MM-DD HH:mm"
-              />
               <ValidatedField id="spe-org" name="orgId" data-cy="org" label={translate('asiraApp.spe.org')} type="select">
                 <option value="" key="0" />
                 {orgs
                   ? orgs.map(otherEntity => (
                       <option value={otherEntity.id} key={otherEntity.id}>
-                        {otherEntity.id}
+                        {otherEntity.orgName}
                       </option>
                     ))
                   : null}

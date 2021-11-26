@@ -24,6 +24,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import tech.jhipster.web.util.HeaderUtil;
 import tech.jhipster.web.util.PaginationUtil;
 import tech.jhipster.web.util.ResponseUtil;
+import java.time.Instant;
 
 /**
  * REST controller for managing {@link com.dshaw.asira.domain.Com}.
@@ -61,6 +62,8 @@ public class ComResource {
         if (com.getId() != null) {
             throw new BadRequestAlertException("A new com cannot already have an ID", ENTITY_NAME, "idexists");
         }
+        com.setcCreatedDate(Instant.now());
+        com.setcModifiedDate(Instant.now());
         Com result = comService.save(com);
         return ResponseEntity
             .created(new URI("/api/coms/" + result.getId()))
@@ -92,7 +95,7 @@ public class ComResource {
         if (!comRepository.existsById(id)) {
             throw new BadRequestAlertException("Entity not found", ENTITY_NAME, "idnotfound");
         }
-
+        com.setcModifiedDate(Instant.now());
         Com result = comService.save(com);
         return ResponseEntity
             .ok()

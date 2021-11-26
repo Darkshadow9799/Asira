@@ -140,8 +140,8 @@ export const Project = (props: RouteComponentProps<{ url: string }>) => {
                     {project.projModifiedDate ? <TextFormat type="date" value={project.projModifiedDate} format={APP_DATE_FORMAT} /> : null}
                   </td>
                   <td>{project.projMemberNumber}</td>
-                  <td>{project.org ? <Link to={`org/${project.org.id}`}>{project.org.id}</Link> : ''}</td>
-                  <td>{project.spe ? <Link to={`spe/${project.spe.id}`}>{project.spe.id}</Link> : ''}</td>
+                  <td>{project.org ? <Link to={`org/${project.org.id}`}>{project.org.orgName}</Link> : ''}</td>
+                  <td>{project.spe ? <Link to={`spe/${project.spe.id}`}>{project.spe.speFirstName}</Link> : ''}</td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${project.id}`} color="info" size="sm" data-cy="entityDetailsButton">

@@ -169,9 +169,9 @@ export const SubModules = (props: RouteComponentProps<{ url: string }>) => {
                   <td>{subModules.smCompleted ? 'true' : 'false'}</td>
                   <td>{subModules.speNameSmTagId}</td>
                   <td>{subModules.smLoggedTime}</td>
-                  <td>{subModules.tag ? <Link to={`tag/${subModules.tag.id}`}>{subModules.tag.id}</Link> : ''}</td>
-                  <td>{subModules.spe ? <Link to={`spe/${subModules.spe.id}`}>{subModules.spe.id}</Link> : ''}</td>
-                  <td>{subModules.module ? <Link to={`modules/${subModules.module.id}`}>{subModules.module.id}</Link> : ''}</td>
+                  <td>{subModules.tag ? <Link to={`tag/${subModules.tag.id}`}>{subModules.tag.tagTitle}</Link> : ''}</td>
+                  <td>{subModules.spe ? <Link to={`spe/${subModules.spe.id}`}>{subModules.spe.speFirstName}</Link> : ''}</td>
+                  <td>{subModules.module ? <Link to={`modules/${subModules.module.id}`}>{subModules.module.mName}</Link> : ''}</td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${subModules.id}`} color="info" size="sm" data-cy="entityDetailsButton">

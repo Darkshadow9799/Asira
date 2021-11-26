@@ -74,7 +74,7 @@ export const SpeDetail = (props: RouteComponentProps<{ id: string }>) => {
           <dt>
             <Translate contentKey="asiraApp.spe.org">Org</Translate>
           </dt>
-          <dd>{speEntity.org ? speEntity.org.id : ''}</dd>
+          <dd>{speEntity.org ? speEntity.org.orgName : ''}</dd>
         </dl>
         <Button tag={Link} to="/spe" replace color="info" data-cy="entityDetailsBackButton">
           <FontAwesomeIcon icon="arrow-left" />{' '}

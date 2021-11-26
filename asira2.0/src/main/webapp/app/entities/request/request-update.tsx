@@ -133,22 +133,6 @@ export const RequestUpdate = (props: RouteComponentProps<{ id: string }>) => {
                 check
                 type="checkbox"
               />
-              <ValidatedField
-                label={translate('asiraApp.request.createdDate')}
-                id="request-createdDate"
-                name="createdDate"
-                data-cy="createdDate"
-                type="datetime-local"
-                placeholder="YYYY-MM-DD HH:mm"
-              />
-              <ValidatedField
-                label={translate('asiraApp.request.modifiedDate')}
-                id="request-modifiedDate"
-                name="modifiedDate"
-                data-cy="modifiedDate"
-                type="datetime-local"
-                placeholder="YYYY-MM-DD HH:mm"
-              />
               <Button tag={Link} id="cancel-save" data-cy="entityCreateCancelButton" to="/request" replace color="info">
                 <FontAwesomeIcon icon="arrow-left" />
                 &nbsp;

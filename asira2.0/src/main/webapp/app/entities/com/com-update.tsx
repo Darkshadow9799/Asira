@@ -118,22 +118,6 @@ export const ComUpdate = (props: RouteComponentProps<{ id: string }>) => {
               />
               <ValidatedField label={translate('asiraApp.com.cDesc')} id="com-cDesc" name="cDesc" data-cy="cDesc" type="text" />
               <ValidatedField
-                label={translate('asiraApp.com.cCreatedDate')}
-                id="com-cCreatedDate"
-                name="cCreatedDate"
-                data-cy="cCreatedDate"
-                type="datetime-local"
-                placeholder="YYYY-MM-DD HH:mm"
-              />
-              <ValidatedField
-                label={translate('asiraApp.com.cModifiedDate')}
-                id="com-cModifiedDate"
-                name="cModifiedDate"
-                data-cy="cModifiedDate"
-                type="datetime-local"
-                placeholder="YYYY-MM-DD HH:mm"
-              />
-              <ValidatedField
                 id="com-subModules"
                 name="subModulesId"
                 data-cy="subModules"
@@ -144,7 +128,7 @@ export const ComUpdate = (props: RouteComponentProps<{ id: string }>) => {
                 {subModules
                   ? subModules.map(otherEntity => (
                       <option value={otherEntity.id} key={otherEntity.id}>
-                        {otherEntity.id}
+                        {otherEntity.smName}
                       </option>
                     ))
                   : null}

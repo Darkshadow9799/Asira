@@ -115,22 +115,6 @@ export const ProjectUpdate = (props: RouteComponentProps<{ id: string }>) => {
                 }}
               />
               <ValidatedField
-                label={translate('asiraApp.project.projCreatedDate')}
-                id="project-projCreatedDate"
-                name="projCreatedDate"
-                data-cy="projCreatedDate"
-                type="datetime-local"
-                placeholder="YYYY-MM-DD HH:mm"
-              />
-              <ValidatedField
-                label={translate('asiraApp.project.projModifiedDate')}
-                id="project-projModifiedDate"
-                name="projModifiedDate"
-                data-cy="projModifiedDate"
-                type="datetime-local"
-                placeholder="YYYY-MM-DD HH:mm"
-              />
-              <ValidatedField
                 label={translate('asiraApp.project.projMemberNumber')}
                 id="project-projMemberNumber"
                 name="projMemberNumber"
@@ -142,7 +126,7 @@ export const ProjectUpdate = (props: RouteComponentProps<{ id: string }>) => {
                 {orgs
                   ? orgs.map(otherEntity => (
                       <option value={otherEntity.id} key={otherEntity.id}>
-                        {otherEntity.id}
+                        {otherEntity.orgName}
                       </option>
                     ))
                   : null}
@@ -152,7 +136,7 @@ export const ProjectUpdate = (props: RouteComponentProps<{ id: string }>) => {
                 {spes
                   ? spes.map(otherEntity => (
                       <option value={otherEntity.id} key={otherEntity.id}>
-                        {otherEntity.id}
+                        {otherEntity.speFirstName}
                       </option>
                     ))
                   : null}

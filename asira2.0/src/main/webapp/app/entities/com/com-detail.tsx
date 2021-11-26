@@ -62,7 +62,7 @@ export const ComDetail = (props: RouteComponentProps<{ id: string }>) => {
           <dt>
             <Translate contentKey="asiraApp.com.subModules">Sub Modules</Translate>
           </dt>
-          <dd>{comEntity.subModules ? comEntity.subModules.id : ''}</dd>
+          <dd>{comEntity.subModules ? comEntity.subModules.smName : ''}</dd>
         </dl>
         <Button tag={Link} to="/com" replace color="info" data-cy="entityDetailsBackButton">
           <FontAwesomeIcon icon="arrow-left" />{' '}

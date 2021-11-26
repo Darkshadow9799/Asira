@@ -22,6 +22,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import tech.jhipster.web.util.HeaderUtil;
 import tech.jhipster.web.util.PaginationUtil;
 import tech.jhipster.web.util.ResponseUtil;
+import java.time.Instant;
 
 /**
  * REST controller for managing {@link com.dshaw.asira.domain.SubModules}.
@@ -59,6 +60,8 @@ public class SubModulesResource {
         if (subModules.getId() != null) {
             throw new BadRequestAlertException("A new subModules cannot already have an ID", ENTITY_NAME, "idexists");
         }
+        subModules.setSmCreatedDate(Instant.now());
+        subModules.setSmModifiedDate(Instant.now());
         SubModules result = subModulesService.save(subModules);
         return ResponseEntity
             .created(new URI("/api/sub-modules/" + result.getId()))
@@ -93,6 +96,7 @@ public class SubModulesResource {
             throw new BadRequestAlertException("Entity not found", ENTITY_NAME, "idnotfound");
         }
 
+        subModules.setSmModifiedDate(Instant.now());
         SubModules result = subModulesService.save(subModules);
         return ResponseEntity
             .ok()

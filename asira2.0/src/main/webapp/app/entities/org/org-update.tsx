@@ -116,22 +116,6 @@ export const OrgUpdate = (props: RouteComponentProps<{ id: string }>) => {
                 type="text"
               />
               <ValidatedField
-                label={translate('asiraApp.org.createdDate')}
-                id="org-createdDate"
-                name="createdDate"
-                data-cy="createdDate"
-                type="datetime-local"
-                placeholder="YYYY-MM-DD HH:mm"
-              />
-              <ValidatedField
-                label={translate('asiraApp.org.modifiedDate')}
-                id="org-modifiedDate"
-                name="modifiedDate"
-                data-cy="modifiedDate"
-                type="datetime-local"
-                placeholder="YYYY-MM-DD HH:mm"
-              />
-              <ValidatedField
                 label={translate('asiraApp.org.orgProjNum')}
                 id="org-orgProjNum"
                 name="orgProjNum"

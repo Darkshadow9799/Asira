@@ -16,6 +16,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tech.jhipster.web.util.HeaderUtil;
 import tech.jhipster.web.util.ResponseUtil;
+import java.time.Instant;
 
 /**
  * REST controller for managing {@link com.dshaw.asira.domain.Tag}.
@@ -53,6 +54,8 @@ public class TagResource {
         if (tag.getId() != null) {
             throw new BadRequestAlertException("A new tag cannot already have an ID", ENTITY_NAME, "idexists");
         }
+        tag.setTagCreatedDate(Instant.now());
+        tag.setTagModifiedDate(Instant.now());
         Tag result = tagService.save(tag);
         return ResponseEntity
             .created(new URI("/api/tags/" + result.getId()))
@@ -85,6 +88,7 @@ public class TagResource {
             throw new BadRequestAlertException("Entity not found", ENTITY_NAME, "idnotfound");
         }
 
+        tag.setTagModifiedDate(Instant.now());
         Tag result = tagService.save(tag);
         return ResponseEntity
             .ok()

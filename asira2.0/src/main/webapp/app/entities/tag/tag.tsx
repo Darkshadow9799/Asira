@@ -87,7 +87,7 @@ export const Tag = (props: RouteComponentProps<{ url: string }>) => {
                   <td>{tag.tagCreatedByName}</td>
                   <td>{tag.tagCreatedDate ? <TextFormat type="date" value={tag.tagCreatedDate} format={APP_DATE_FORMAT} /> : null}</td>
                   <td>{tag.tagModifiedDate ? <TextFormat type="date" value={tag.tagModifiedDate} format={APP_DATE_FORMAT} /> : null}</td>
-                  <td>{tag.project ? <Link to={`project/${tag.project.id}`}>{tag.project.id}</Link> : ''}</td>
+                  <td>{tag.project ? <Link to={`project/${tag.project.id}`}>{tag.project.projName}</Link> : ''}</td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${tag.id}`} color="info" size="sm" data-cy="entityDetailsButton">

@@ -22,6 +22,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import tech.jhipster.web.util.HeaderUtil;
 import tech.jhipster.web.util.PaginationUtil;
 import tech.jhipster.web.util.ResponseUtil;
+import java.time.Instant;
 
 /**
  * REST controller for managing {@link com.dshaw.asira.domain.Modules}.
@@ -59,6 +60,8 @@ public class ModulesResource {
         if (modules.getId() != null) {
             throw new BadRequestAlertException("A new modules cannot already have an ID", ENTITY_NAME, "idexists");
         }
+        modules.setmCreatedDate(Instant.now());
+        modules.setmModifiedDate(Instant.now());
         Modules result = modulesService.save(modules);
         return ResponseEntity
             .created(new URI("/api/modules/" + result.getId()))
@@ -91,6 +94,7 @@ public class ModulesResource {
             throw new BadRequestAlertException("Entity not found", ENTITY_NAME, "idnotfound");
         }
 
+        modules.setmModifiedDate(Instant.now());
         Modules result = modulesService.save(modules);
         return ResponseEntity
             .ok()

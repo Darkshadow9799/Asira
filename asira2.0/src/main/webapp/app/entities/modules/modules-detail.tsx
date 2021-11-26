@@ -86,11 +86,11 @@ export const ModulesDetail = (props: RouteComponentProps<{ id: string }>) => {
           <dt>
             <Translate contentKey="asiraApp.modules.spe">Spe</Translate>
           </dt>
-          <dd>{modulesEntity.spe ? modulesEntity.spe.id : ''}</dd>
+          <dd>{modulesEntity.spe ? modulesEntity.spe.speFirstName : ''}</dd>
           <dt>
             <Translate contentKey="asiraApp.modules.project">Project</Translate>
           </dt>
-          <dd>{modulesEntity.project ? modulesEntity.project.id : ''}</dd>
+          <dd>{modulesEntity.project ? modulesEntity.project.projName : ''}</dd>
         </dl>
         <Button tag={Link} to="/modules" replace color="info" data-cy="entityDetailsBackButton">
           <FontAwesomeIcon icon="arrow-left" />{' '}

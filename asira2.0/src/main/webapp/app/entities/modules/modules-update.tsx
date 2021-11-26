@@ -112,22 +112,6 @@ export const ModulesUpdate = (props: RouteComponentProps<{ id: string }>) => {
               ) : null}
               <ValidatedField label={translate('asiraApp.modules.mName')} id="modules-mName" name="mName" data-cy="mName" type="text" />
               <ValidatedField label={translate('asiraApp.modules.mDesc')} id="modules-mDesc" name="mDesc" data-cy="mDesc" type="text" />
-              <ValidatedField
-                label={translate('asiraApp.modules.mCreatedDate')}
-                id="modules-mCreatedDate"
-                name="mCreatedDate"
-                data-cy="mCreatedDate"
-                type="datetime-local"
-                placeholder="YYYY-MM-DD HH:mm"
-              />
-              <ValidatedField
-                label={translate('asiraApp.modules.mModifiedDate')}
-                id="modules-mModifiedDate"
-                name="mModifiedDate"
-                data-cy="mModifiedDate"
-                type="datetime-local"
-                placeholder="YYYY-MM-DD HH:mm"
-              />
               <ValidatedField label={translate('asiraApp.modules.mSmNum')} id="modules-mSmNum" name="mSmNum" data-cy="mSmNum" type="text" />
               <ValidatedField
                 label={translate('asiraApp.modules.mDueDate')}
@@ -158,7 +142,7 @@ export const ModulesUpdate = (props: RouteComponentProps<{ id: string }>) => {
                 {spes
                   ? spes.map(otherEntity => (
                       <option value={otherEntity.id} key={otherEntity.id}>
-                        {otherEntity.id}
+                        {otherEntity.speFirstName}
                       </option>
                     ))
                   : null}
@@ -174,7 +158,7 @@ export const ModulesUpdate = (props: RouteComponentProps<{ id: string }>) => {
                 {projects
                   ? projects.map(otherEntity => (
                       <option value={otherEntity.id} key={otherEntity.id}>
-                        {otherEntity.id}
+                        {otherEntity.projName}
                       </option>
                     ))
                   : null}

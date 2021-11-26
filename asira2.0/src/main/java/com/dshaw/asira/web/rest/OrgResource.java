@@ -18,6 +18,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tech.jhipster.web.util.HeaderUtil;
 import tech.jhipster.web.util.ResponseUtil;
+import java.time.Instant;
 
 /**
  * REST controller for managing {@link com.dshaw.asira.domain.Org}.
@@ -55,6 +56,8 @@ public class OrgResource {
         if (org.getId() != null) {
             throw new BadRequestAlertException("A new org cannot already have an ID", ENTITY_NAME, "idexists");
         }
+        org.setCreatedDate(Instant.now());
+        org.setModifiedDate(Instant.now());
         Org result = orgService.save(org);
         return ResponseEntity
             .created(new URI("/api/orgs/" + result.getId()))
@@ -87,6 +90,7 @@ public class OrgResource {
             throw new BadRequestAlertException("Entity not found", ENTITY_NAME, "idnotfound");
         }
 
+        org.setModifiedDate(Instant.now());
         Org result = orgService.save(org);
         return ResponseEntity
             .ok()

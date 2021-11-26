@@ -100,15 +100,15 @@ export const SubModulesDetail = (props: RouteComponentProps<{ id: string }>) => 
           <dt>
             <Translate contentKey="asiraApp.subModules.tag">Tag</Translate>
           </dt>
-          <dd>{subModulesEntity.tag ? subModulesEntity.tag.id : ''}</dd>
+          <dd>{subModulesEntity.tag ? subModulesEntity.tag.tagTitle : ''}</dd>
           <dt>
             <Translate contentKey="asiraApp.subModules.spe">Spe</Translate>
           </dt>
-          <dd>{subModulesEntity.spe ? subModulesEntity.spe.id : ''}</dd>
+          <dd>{subModulesEntity.spe ? subModulesEntity.spe.speFirstName : ''}</dd>
           <dt>
             <Translate contentKey="asiraApp.subModules.module">Module</Translate>
           </dt>
-          <dd>{subModulesEntity.module ? subModulesEntity.module.id : ''}</dd>
+          <dd>{subModulesEntity.module ? subModulesEntity.module.mName : ''}</dd>
         </dl>
         <Button tag={Link} to="/sub-modules" replace color="info" data-cy="entityDetailsBackButton">
           <FontAwesomeIcon icon="arrow-left" />{' '}

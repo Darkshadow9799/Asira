@@ -156,8 +156,8 @@ export const Modules = (props: RouteComponentProps<{ url: string }>) => {
                     {modules.mFinishedDate ? <TextFormat type="date" value={modules.mFinishedDate} format={APP_DATE_FORMAT} /> : null}
                   </td>
                   <td>{modules.mCompleted ? 'true' : 'false'}</td>
-                  <td>{modules.spe ? <Link to={`spe/${modules.spe.id}`}>{modules.spe.id}</Link> : ''}</td>
-                  <td>{modules.project ? <Link to={`project/${modules.project.id}`}>{modules.project.id}</Link> : ''}</td>
+                  <td>{modules.spe ? <Link to={`spe/${modules.spe.id}`}>{modules.spe.speFirstName}</Link> : ''}</td>
+                  <td>{modules.project ? <Link to={`project/${modules.project.id}`}>{modules.project.projName}</Link> : ''}</td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${modules.id}`} color="info" size="sm" data-cy="entityDetailsButton">

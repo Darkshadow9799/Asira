@@ -70,7 +70,7 @@ export const TagDetail = (props: RouteComponentProps<{ id: string }>) => {
           <dt>
             <Translate contentKey="asiraApp.tag.project">Project</Translate>
           </dt>
-          <dd>{tagEntity.project ? tagEntity.project.id : ''}</dd>
+          <dd>{tagEntity.project ? tagEntity.project.projName : ''}</dd>
         </dl>
         <Button tag={Link} to="/tag" replace color="info" data-cy="entityDetailsBackButton">
           <FontAwesomeIcon icon="arrow-left" />{' '}
