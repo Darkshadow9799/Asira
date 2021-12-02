@@ -1,8 +1,11 @@
 package com.dshaw.asira.service.impl;
 
+import com.dshaw.asira.domain.Org;
 import com.dshaw.asira.domain.Project;
 import com.dshaw.asira.repository.ProjectRepository;
 import com.dshaw.asira.service.ProjectService;
+
+import java.util.List;
 import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -62,6 +65,12 @@ public class ProjectServiceImpl implements ProjectService {
     public Page<Project> findAll(Pageable pageable) {
         log.debug("Request to get all Projects");
         return projectRepository.findAll(pageable);
+    }
+
+    @Override
+    public List<Project> findAllProjectsByOrg(Org org) {
+        log.debug("Request to get all Projects By Org: {}", org);
+        return projectRepository.findByOrg(org);
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.dshaw.asira.service;
 
+import com.dshaw.asira.domain.Org;
 import com.dshaw.asira.domain.Spe;
 import java.util.List;
 import java.util.Optional;
@@ -31,6 +32,8 @@ public interface SpeService {
      */
     List<Spe> findAll();
 
+    List<Spe> findAllSpesByOrg(Org org);
+
     /**
      * Get the "id" spe.
      *
@@ -38,6 +41,8 @@ public interface SpeService {
      * @return the entity.
      */
     Optional<Spe> findOne(Long id);
+
+    Optional<Spe> findOneByEmailId(String email);
 
     /**
      * Delete the "id" spe.
