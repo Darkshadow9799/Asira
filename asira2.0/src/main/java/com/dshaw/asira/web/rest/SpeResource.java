@@ -156,6 +156,13 @@ public class SpeResource {
         return ResponseUtil.wrapOrNotFound(spe);
     }
 
+    @GetMapping("/spes/{email}")
+    public ResponseEntity<Spe> getSpeByEmail(@PathVariable String email) {
+        log.debug("REST request to get Spe : {}", email);
+        Optional<Spe> spe = speService.findOneByEmailId(email);
+        return ResponseUtil.wrapOrNotFound(spe);
+    }
+
     /**
      * {@code DELETE  /spes/:id} : delete the "id" spe.
      *
