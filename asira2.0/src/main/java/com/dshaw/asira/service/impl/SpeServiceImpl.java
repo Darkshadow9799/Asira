@@ -1,5 +1,6 @@
 package com.dshaw.asira.service.impl;
 
+import com.dshaw.asira.domain.Org;
 import com.dshaw.asira.domain.Spe;
 import com.dshaw.asira.repository.SpeRepository;
 import com.dshaw.asira.service.SpeService;
@@ -73,10 +74,20 @@ public class SpeServiceImpl implements SpeService {
     }
 
     @Override
+    public List<Spe> findAllSpesByOrg(Org org) {
+        return speRepository.findByOrg(org);
+    }
+
+    @Override
     @Transactional(readOnly = true)
     public Optional<Spe> findOne(Long id) {
         log.debug("Request to get Spe : {}", id);
         return speRepository.findById(id);
+    }
+
+    @Override
+    public Optional<Spe> findOneByEmailId(String email) {
+        return speRepository.findBySpeEmailId(email);
     }
 
     @Override

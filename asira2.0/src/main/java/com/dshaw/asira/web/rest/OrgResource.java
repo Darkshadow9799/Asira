@@ -1,6 +1,8 @@
 package com.dshaw.asira.web.rest;
 
 import com.dshaw.asira.domain.Org;
+import com.dshaw.asira.domain.Project;
+import com.dshaw.asira.domain.Spe;
 import com.dshaw.asira.repository.OrgRepository;
 import com.dshaw.asira.service.OrgService;
 import com.dshaw.asira.web.rest.errors.BadRequestAlertException;
@@ -141,6 +143,18 @@ public class OrgResource {
     public List<Org> getAllOrgs() {
         log.debug("REST request to get all Orgs");
         return orgService.findAll();
+    }
+
+    @GetMapping("/orgs/spes/{id}")
+    public List<Spe> getAllSpesOfOrg(@PathVariable Long id) {
+        log.debug("REST request to get all Spes of Org");
+        return orgService.findAllSpesOfOrg(id);
+    }
+
+    @GetMapping("/orgs/projects/{id}")
+    public List<Project> getAllProjectsOfOrg(@PathVariable Long id) {
+        log.debug("REST request to get all Spes of Org");
+        return orgService.findAllProjectsOfOrg(id);
     }
 
     /**

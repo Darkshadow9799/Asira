@@ -4,6 +4,9 @@ import com.dshaw.asira.domain.Org;
 import java.util.List;
 import java.util.Optional;
 
+import com.dshaw.asira.domain.Project;
+import com.dshaw.asira.domain.Spe;
+
 /**
  * Service Interface for managing {@link Org}.
  */
@@ -30,6 +33,10 @@ public interface OrgService {
      * @return the list of entities.
      */
     List<Org> findAll();
+
+    List<Spe> findAllSpesOfOrg(Long id);
+
+    List<Project> findAllProjectsOfOrg(Long id);
 
     /**
      * Get the "id" org.
