@@ -1,6 +1,7 @@
 package com.dshaw.asira.service;
 
 import com.dshaw.asira.domain.Org;
+import com.dshaw.asira.domain.Project;
 import com.dshaw.asira.domain.Spe;
 import java.util.List;
 import java.util.Optional;
@@ -33,6 +34,8 @@ public interface SpeService {
     List<Spe> findAll();
 
     List<Spe> findAllSpesByOrg(Org org);
+
+    List<Project> findAllProjectsBySpe(Long id);
 
     /**
      * Get the "id" spe.

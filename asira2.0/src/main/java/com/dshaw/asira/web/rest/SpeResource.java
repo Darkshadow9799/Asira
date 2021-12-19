@@ -1,5 +1,6 @@
 package com.dshaw.asira.web.rest;
 
+import com.dshaw.asira.domain.Project;
 import com.dshaw.asira.domain.Spe;
 import com.dshaw.asira.repository.SpeRepository;
 import com.dshaw.asira.service.SpeService;
@@ -161,6 +162,11 @@ public class SpeResource {
         log.debug("REST request to get Spe : {}", email);
         Optional<Spe> spe = speService.findOneByEmailId(email);
         return ResponseUtil.wrapOrNotFound(spe);
+    }
+
+    @GetMapping("/specs/projects/{id}")
+    public ResponseEntity<List<Project>> getAllProjectsBySpe(@PathVariable Long id){
+        return ResponseEntity.ok().body(speService.findAllProjectsBySpe(id));
     }
 
     /**

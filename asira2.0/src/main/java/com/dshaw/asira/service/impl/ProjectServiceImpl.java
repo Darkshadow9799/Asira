@@ -1,10 +1,14 @@
 package com.dshaw.asira.service.impl;
 
+import com.dshaw.asira.domain.Modules;
 import com.dshaw.asira.domain.Org;
 import com.dshaw.asira.domain.Project;
+import com.dshaw.asira.domain.Spe;
 import com.dshaw.asira.repository.ProjectRepository;
+import com.dshaw.asira.service.ModulesService;
 import com.dshaw.asira.service.ProjectService;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import org.slf4j.Logger;
@@ -25,8 +29,12 @@ public class ProjectServiceImpl implements ProjectService {
 
     private final ProjectRepository projectRepository;
 
-    public ProjectServiceImpl(ProjectRepository projectRepository) {
+    private final ModulesService modulesService;
+
+    public ProjectServiceImpl(ProjectRepository projectRepository,
+                              ModulesService modulesService) {
         this.projectRepository = projectRepository;
+        this.modulesService = modulesService;
     }
 
     @Override
@@ -71,6 +79,21 @@ public class ProjectServiceImpl implements ProjectService {
     public List<Project> findAllProjectsByOrg(Org org) {
         log.debug("Request to get all Projects By Org: {}", org);
         return projectRepository.findByOrg(org);
+    }
+
+    @Override
+    public List<Project> findAllProjectsBySpe(Spe spe) {
+        log.debug("Request to get all projects by Spe: {}", spe);
+        return projectRepository.findBySpe(spe);
+    }
+
+    @Override
+    public List<Modules> findAllModulesByProject(Long id) {
+        Optional<Project> project = projectRepository.findById(id);
+        if(project.isPresent()){
+            return modulesService.getAllModulesByProject(project.get());
+        }
+        return new ArrayList<Modules>();
     }
 
     @Override

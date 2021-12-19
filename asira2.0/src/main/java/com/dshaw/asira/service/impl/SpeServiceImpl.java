@@ -1,9 +1,13 @@
 package com.dshaw.asira.service.impl;
 
 import com.dshaw.asira.domain.Org;
+import com.dshaw.asira.domain.Project;
 import com.dshaw.asira.domain.Spe;
 import com.dshaw.asira.repository.SpeRepository;
+import com.dshaw.asira.service.ProjectService;
 import com.dshaw.asira.service.SpeService;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import org.slf4j.Logger;
@@ -22,8 +26,12 @@ public class SpeServiceImpl implements SpeService {
 
     private final SpeRepository speRepository;
 
-    public SpeServiceImpl(SpeRepository speRepository) {
+    private final ProjectService projectService;
+
+    public SpeServiceImpl(SpeRepository speRepository,
+                          ProjectService projectService) {
         this.speRepository = speRepository;
+        this.projectService = projectService;
     }
 
     @Override
@@ -76,6 +84,15 @@ public class SpeServiceImpl implements SpeService {
     @Override
     public List<Spe> findAllSpesByOrg(Org org) {
         return speRepository.findByOrg(org);
+    }
+
+    @Override
+    public List<Project> findAllProjectsBySpe(Long id) {
+        Optional<Spe> spe = speRepository.findById(id);
+        if(spe.isPresent()){
+            return projectService.findAllProjectsBySpe(spe.get());
+        }
+        return new ArrayList<Project>();
     }
 
     @Override

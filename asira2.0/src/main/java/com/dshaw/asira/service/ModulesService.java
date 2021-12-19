@@ -1,7 +1,11 @@
 package com.dshaw.asira.service;
 
 import com.dshaw.asira.domain.Modules;
+
+import java.util.List;
 import java.util.Optional;
+
+import com.dshaw.asira.domain.Project;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -16,6 +20,8 @@ public interface ModulesService {
      * @return the persisted entity.
      */
     Modules save(Modules modules);
+
+    List<Modules> getAllModulesByProject(Project project);
 
     /**
      * Partially updates a modules.

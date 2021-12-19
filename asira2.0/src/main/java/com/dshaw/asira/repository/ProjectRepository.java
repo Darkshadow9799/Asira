@@ -2,6 +2,7 @@ package com.dshaw.asira.repository;
 
 import com.dshaw.asira.domain.Org;
 import com.dshaw.asira.domain.Project;
+import com.dshaw.asira.domain.Spe;
 import liquibase.pro.packaged.P;
 import org.springframework.data.domain.Example;
 import org.springframework.data.jpa.repository.*;
@@ -16,4 +17,6 @@ import java.util.List;
 @Repository
 public interface ProjectRepository extends JpaRepository<Project, Long> {
     List<Project> findByOrg(Org org);
+
+    List<Project> findBySpe(Spe spe);
 }

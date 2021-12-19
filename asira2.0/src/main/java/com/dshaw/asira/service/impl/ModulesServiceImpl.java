@@ -1,8 +1,11 @@
 package com.dshaw.asira.service.impl;
 
 import com.dshaw.asira.domain.Modules;
+import com.dshaw.asira.domain.Project;
 import com.dshaw.asira.repository.ModulesRepository;
 import com.dshaw.asira.service.ModulesService;
+
+import java.util.List;
 import java.util.Optional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,6 +33,11 @@ public class ModulesServiceImpl implements ModulesService {
     public Modules save(Modules modules) {
         log.debug("Request to save Modules : {}", modules);
         return modulesRepository.save(modules);
+    }
+
+    @Override
+    public List<Modules> getAllModulesByProject(Project project) {
+        return modulesRepository.findByProject(project);
     }
 
     @Override
