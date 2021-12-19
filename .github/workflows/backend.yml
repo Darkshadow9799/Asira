@@ -9,11 +9,13 @@ on:
     paths-ignore:
     - '**/README.md'
     - 'asirafront/**'
+    - 'asira/**'
   pull_request:
     branches: [ main ]
     paths-ignore:
     - '**/README.md'
     - 'asirafront/**'
+    - 'asira/**'
 
 jobs:
    version:
@@ -72,16 +74,16 @@ jobs:
       with:
         path: version1.txt
     - name: Grant execute permission for gradlew
-      run: chmod +x ./asira/gradlew
+      run: chmod +x ./asira2.0/gradlew
     - name: Build war file with Gradle
       run: |
-        cd ./asira
+        cd ./asira2.0
         git init
         ./gradlew -Pprod -Pwar clean bootWar -x test
     - name: Create a Release in GitHub
       uses: ncipollo/release-action@v1
       with:
-        artifacts: "asira/build/libs/asira-0.0.1-SNAPSHOT.war"
+        artifacts: "asira2.0/build/libs/asira-0.0.1-SNAPSHOT.war"
         token: ${{ secrets.TOKEN }}
         tag: ${{ steps.version.outputs.content }}
         commit: ${{ github.sha }}
